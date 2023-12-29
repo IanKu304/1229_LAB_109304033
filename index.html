@@ -7,9 +7,9 @@
 
   <!-- 1. Include CSS styles -->
   
-  
+  <link  rel="stylesheet" href="guessNumber.css">
   <!-- 2. Include JavaScript file -->
-  
+  <script src="guessNumber.js"></script>
 </head>
 <body>
 
@@ -18,9 +18,17 @@
     <p>Guess a number between 1 and 10:</p>
 
     <!-- 3. Trigger this button with the Enter Key. -->
-    <input type="number" id="userGuess" placeholder="Enter your guess">
-    <button onclick="checkGuess()">Check Guess</button>
-
+      <input type="number" id="userGuess" placeholder="Enter your guess">
+      <button onclick="checkGuess()" id = "a">Check Guess</button>
+      <script>
+        var input = document.getElementById("userGuess");
+        input.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+          document.getElementById("a").click();
+          }
+        }); 
+      </script>
     <div id="result"></div>
   </div>
 

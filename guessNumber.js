@@ -3,7 +3,7 @@ let secretNumber = generateRandomNumber();
 
 // 4. Function to generate a random number between 1 and 10
 function generateRandomNumber() {
-  
+  return(Math.floor(Math.random()*9)+1)
 }
 
 // Function to check the user's guess
@@ -14,6 +14,13 @@ function checkGuess() {
   let resultElement = document.getElementById("result");
 
   // 5. Here should be an if-else statement.
+  if(userGuess == secretNumber){
+    alert("Congratulations! You guessed the correct number!")
+    showImageAndPlaySound("picture2.jpeg","music2.mp3")
+  }else{
+    alert("Sorry, try again!")
+    showImageAndPlaySound("picture1.jpeg","music1.mp3")
+  }
 
   // If the answer is correct, then output "Congratulations! You guessed the correct number!" with picture2 and music2.
 
